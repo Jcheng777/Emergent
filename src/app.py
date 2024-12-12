@@ -31,12 +31,12 @@ def base():
 @app.route("/data/", methods=["POST"])
 def create_data():
   body = json.loads(request.data)
-  heart_rate = body.get("heart_rate")
-  blood_oxygen = body.get("blood_oxygen")
-  glucose_level = body.get("glucose_level")
-  hrv = body.get("hrv")
-  longitude = body.get("longitude")
-  latitude = body.get("latitude")
+  heart_rate = body.get("heart_rate", None)
+  blood_oxygen = body.get("blood_oxygen", None)
+  glucose_level = body.get("glucose_level", None)
+  hrv = body.get("hrv", None)
+  longitude = body.get("longitude", None)
+  latitude = body.get("latitude", None)
 
   new_data = HealthData(
         heart_rate=heart_rate,

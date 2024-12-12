@@ -10,13 +10,13 @@ class HealthData(db.Model):
   """
   __tablename__ = "health_data"
   id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-  heart_rate = db.Column(db.Integer, nullable=False)  # Heart rate in beats per minute
-  blood_oxygen = db.Column(db.Float, nullable=False)  # Blood oxygen level as a percentage
+  heart_rate = db.Column(db.Integer, nullable=True)  # Heart rate in beats per minute
+  blood_oxygen = db.Column(db.Float, nullable=True)  # Blood oxygen level as a percentage
   hrv = db.Column(db.Float, nullable=True)  # Heart rate variability in milliseconds
   glucose_level = db.Column(db.Float, nullable = True) # Glucose level in mg/dL 
-  latitude = db.Column(db.Float, nullable=False)  # Latitude of the location
-  longitude = db.Column(db.Float, nullable=False)  # Longitude of the location
-  timestamp = db.Column(db.DateTime, nullable=False)  # Timestamp of data collection
+  latitude = db.Column(db.Float, nullable=True)  # Latitude of the location
+  longitude = db.Column(db.Float, nullable=True)  # Longitude of the location
+  timestamp = db.Column(db.DateTime, nullable=True)  # Timestamp of data collection
 
   def __init__(self, **kwargs):
     """
